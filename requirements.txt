@@ -1,0 +1,14 @@
+streamlit
+pandas
+numpy<2
+scikit-learn
+fairlearn
+aif360
+shap
+plotly
+matplotlib
+fpdf2
+kagglehub[pandas-datasets]
+opencv-python-headless
+dice-ml
+scipy
