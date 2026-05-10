@@ -1,0 +1,507 @@
+/* ---- Root overrides ---- */
+html, body, .stApp {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+.stApp {
+    background-color: BG_VAR;
+}
+
+/* ---- Sidebar styling ---- */
+section[data-testid="stSidebar"] {
+    background: linear-gradient(180deg, #0F172A 0%, #1E293B 100%);
+    border-right: 1px solid rgba(255,255,255,0.05);
+}
+
+/* Base text color for sidebar (non-widgets) */
+section[data-testid="stSidebar"] p, 
+section[data-testid="stSidebar"] h1, 
+section[data-testid="stSidebar"] h2, 
+section[data-testid="stSidebar"] h3, 
+section[data-testid="stSidebar"] span:not(.st-c6):not(.st-c5) {
+    color: #FFFFFF !important;
+    font-size: 0.85rem;
+}
+
+section[data-testid="stSidebar"] > div:first-child {
+    padding-top: 0.5rem;
+    padding-left: 0.5rem;
+    padding-right: 0.5rem;
+    overflow: hidden !important;
+    overflow-y: hidden !important;
+    height: 100vh !important;
+    max-height: 100vh !important;
+}
+
+section[data-testid="stSidebar"] [data-testid="stSidebarContent"] {
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+
+section[data-testid="stSidebar"] .stRadio {
+    margin-bottom: 5px !important;
+}
+section[data-testid="stSidebar"] .stRadio > div {
+    gap: 0px;
+}
+
+section[data-testid="stSidebar"] .stRadio label {
+    color: #FFFFFF !important;
+    padding: 4px 10px;
+    border-radius: 6px;
+    transition: all 0.2s ease;
+    margin-bottom: 0px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    cursor: pointer;
+    border: 1px solid transparent;
+}
+
+section[data-testid="stSidebar"] .stRadio label:hover {
+    background-color: rgba(255,255,255,0.05);
+    color: #F8FAFC !important;
+    border-color: rgba(255,255,255,0.05);
+}
+
+section[data-testid="stSidebar"] .stRadio label[data-checked="true"],
+section[data-testid="stSidebar"] [aria-checked="true"] + label {
+    background-color: rgba(22, 163, 74, 0.1);
+    color: #4ADE80 !important; /* Green 400 */
+    border-color: rgba(22, 163, 74, 0.2);
+    font-weight: 600;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+section[data-testid="stSidebar"] hr {
+    border-color: rgba(255,255,255,0.08);
+    margin: 20px 0;
+}
+
+/* ---- Aesthetics & Navigation ---- */
+#MainMenu, footer {
+    visibility: hidden;
+}
+header[data-testid="stHeader"] {
+    background: transparent !important;
+}
+header[data-testid="stHeader"] * {
+    color: PRIMARY_VAR !important;
+}
+
+/* ---- KPI Cards ---- */
+.kpi-card {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 24px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+}
+.kpi-card:hover {
+    transform: translateY(-4px) scale(1.02);
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+    border-color: rgba(22, 163, 74, 0.3);
+}
+.kpi-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: TEXT_MUTED_VAR;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    margin: 0 0 8px 0;
+}
+.kpi-value {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: TEXT_VAR;
+    margin: 0;
+}
+.kpi-value.green { color: ACCENT_VAR; }
+.kpi-value.red { color: RED_VAR; }
+.kpi-value.amber { color: AMBER_VAR; }
+.kpi-value.blue { color: BLUE_VAR; }
+
+/* ---- Section Headings ---- */
+.section-title {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: PRIMARY_VAR;
+    margin: 0 0 16px 0;
+    padding-bottom: 12px;
+    border-bottom: 1px solid BORDER_VAR;
+}
+
+/* ---- Divider ---- */
+hr {
+    border-color: BORDER_VAR;
+}
+
+/* ---- Info box ---- */
+.info-panel {
+    background: #EFF6FF;
+    border: 1px solid #BFDBFE;
+    border-radius: 10px;
+    padding: 16px 20px;
+    color: #1E40AF;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* ---- Buttons ---- */
+.stButton > button {
+    background: ACCENT_VAR;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 10px 28px;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+}
+.stButton > button:hover {
+    background: #15803D;
+    box-shadow: 0 4px 12px rgba(22, 163, 74, 0.3);
+    transform: translateY(-1px);
+    animation: pulse-green 2s infinite;
+}
+
+@keyframes pulse-green {
+    0% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.7); }
+    70% { box-shadow: 0 0 0 10px rgba(22, 163, 74, 0); }
+    100% { box-shadow: 0 0 0 0 rgba(22, 163, 74, 0); }
+}
+.stButton > button:active {
+    transform: translateY(0);
+}
+
+/* ---- Select/Input ---- */
+.stSelectbox > div > div,
+.stFileUploader {
+    border-radius: 8px !important;
+}
+
+/* Global Selectbox visibility fix */
+div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    background-color: rgba(255,255,255,0.05) !important;
+    border-color: rgba(0,0,0,0.1) !important;
+    color: #1E293B !important; /* Dark text for main page */
+}
+
+/* Specific override for sidebar selectbox (white text) */
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] div[data-baseweb="select"] > div {
+    background-color: rgba(255,255,255,0.1) !important;
+    border-radius: 8px !important;
+}
+
+section[data-testid="stSidebar"] div[data-testid="stSelectbox"] [data-baseweb="select"] * {
+    color: #FFFFFF !important;
+}
+
+
+
+
+div[data-testid="stSelectbox"] svg {
+    fill: currentColor !important;
+}
+
+/* Dropdown list styling */
+div[data-baseweb="popover"] div[data-baseweb="menu"] {
+    background-color: #FFFFFF !important;
+    color: #1E293B !important;
+}
+
+/* ---- Sidebar Overrides ---- */
+div[data-testid="stSidebarUserContent"] {
+    padding-top: 1rem !important;
+}
+section[data-testid="stSidebar"] div.stVerticalBlock {
+    gap: 0.3rem !important;
+}
+.sidebar-header {
+    padding: 10px 4px;
+    margin-top: 0;
+}
+.sidebar-header h2 {
+    margin: 0;
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #FFFFFF !important;
+    letter-spacing: -0.02em;
+    line-height: 1.1;
+}
+.status-panel {
+    background: rgba(255,255,255,0.03);
+    padding: 10px;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+.status-title {
+    font-size: 0.7rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: #FFFFFF !important;
+    margin-top: 12px;
+    margin-bottom: 12px;
+    display: block;
+}
+
+.nav-category-header {
+    font-size: 0.65rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 0.08em;
+    color: rgba(255, 255, 255, 0.5) !important;
+    margin: 12px 0 6px 0;
+    padding-left: 8px;
+    border-left: 3px solid #16A34A;
+}
+.status-panel p.status-title {
+    margin-bottom: 4px;
+}
+.status-item {
+    font-size: 0.7rem;
+    margin: 2px 0;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #FFFFFF !important;
+}
+
+/* ---- Page Structure ---- */
+.page-header {
+    margin-bottom: 2rem;
+}
+.page-title {
+    font-size: 1.8rem;
+    font-weight: 800;
+    color: PRIMARY_VAR;
+    margin: 0;
+    letter-spacing: -0.02em;
+}
+.page-subtitle {
+    font-size: 1rem;
+    color: TEXT_MUTED_VAR;
+    margin: 4px 0 0 0;
+}
+
+/* ---- Hero Banner (Overview) ---- */
+.hero-banner {
+    background: linear-gradient(135deg, PRIMARY_VAR 0%, #1E293B 100%);
+    padding: 40px;
+    border-radius: 16px;
+    color: white;
+    margin-bottom: 30px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+}
+.hero-banner h1 {
+    margin: 0;
+    font-size: 2.2rem;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    color: #FFFFFF !important;
+}
+.hero-banner p {
+    margin: 10px 0 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+    font-weight: 400;
+    color: #FFFFFF !important;
+}
+
+/* ---- Badges ---- */
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 9999px;
+    font-size: 0.75rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.badge-green { background: ACCENT_LIGHT_VAR; color: ACCENT_VAR; }
+.badge-red { background: #FEE2E2; color: RED_VAR; }
+.badge-amber { background: #FEF3C7; color: AMBER_VAR; }
+.badge-gray { background: #F1F5F9; color: TEXT_MUTED_VAR; }
+
+/* ---- List Containers ---- */
+.list-container {
+    background: CARD_BG_VAR;
+    border: 1px solid BORDER_VAR;
+    border-radius: 12px;
+    padding: 20px;
+}
+.list-item {
+    padding: 12px 10px;
+    border-bottom: 1px solid BORDER_VAR;
+}
+.list-item:last-child {
+    border-bottom: none;
+}
+.list-item-title {
+    margin: 0;
+    font-size: 1rem;
+    color: TEXT_VAR;
+    display: flex;
+    align-items: center;
+}
+.list-item-number {
+    font-weight: 800;
+    color: ACCENT_VAR;
+    margin-right: 12px;
+    min-width: 24px;
+    display: inline-block;
+}
+.list-item-abbr {
+    font-weight: 800;
+    color: PRIMARY_VAR;
+    margin-right: 15px;
+    min-width: 80px;
+    display: inline-block;
+}
+.list-item-desc {
+    margin: 6px 0 0 35px;
+    font-size: 0.88rem;
+    color: TEXT_MUTED_VAR;
+}
+
+/* ---- Configuration Status Bar ---- */
+.config-status-bar {
+    background: BG_VAR;
+    border: 1px solid BORDER_VAR;
+    border-radius: 12px;
+    padding: 25px;
+    text-align: center;
+    margin-bottom: 25px;
+}
+.config-status-flex {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.config-status-item {
+    text-align: center;
+}
+.config-status-item:not(:first-child) {
+    border-left: 1px solid BORDER_VAR;
+    padding-left: 15px;
+}
+.config-status-label {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: TEXT_MUTED_VAR;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+.config-status-value {
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: PRIMARY_VAR;
+    text-transform: uppercase;
+    margin: 0;
+}
+.config-status-value.accent { color: ACCENT_VAR; }
+
+/* ---- Risk Assessment Card ---- */
+.risk-assessment-card {
+    background: CARD_BG_VAR;
+    border: 1px solid BORDER_VAR;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+}
+.risk-assessment-card p {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+    color: PRIMARY_VAR;
+}
+
+/* ---- Stream Status Ticker ---- */
+.stream-ticker {
+    background: BG_VAR;
+    border: 1px solid BORDER_VAR;
+    border-radius: 12px;
+    padding: 12px;
+    margin-bottom: 10px;
+}
+.stream-ticker-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.stream-ticker-id {
+    font-family: monospace;
+    font-size: 0.8rem;
+    color: TEXT_MUTED_VAR;
+}
+.stream-ticker-status {
+    font-weight: 800;
+    font-size: 0.85rem;
+}
+.stream-ticker-desc {
+    margin: 4px 0 0 0;
+    font-size: 0.8rem;
+    color: TEXT_VAR;
+}
+
+/* ---- Decision Badge ---- */
+.decision-badge {
+    text-align: center;
+    padding: 6px 12px;
+    border-radius: 8px;
+    border: 1px solid transparent;
+    display: inline-block;
+    width: 100%;
+}
+.decision-badge h3 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 700;
+}
+.decision-badge-approved {
+    background: rgba(22, 163, 74, 0.1);
+    border-color: ACCENT_VAR;
+    color: ACCENT_VAR;
+}
+.decision-badge-denied {
+    background: rgba(220, 38, 38, 0.1);
+    border-color: RED_VAR;
+    color: RED_VAR;
+}
+
+/* Status Classes */
+.status-done {
+    color: ACCENT_VAR !important;
+    font-weight: 600;
+}
+.status-pending {
+    color: TEXT_MUTED_VAR !important;
+    opacity: 0.7;
+}
+
+/* ---- Navigation Footer ---- */
+.nav-footer {
+    padding: 20px 0;
+    margin-top: 40px;
+    border-top: 1px solid BORDER_VAR;
+}
+
+/* Base style for nav buttons (using secondary appearance) */
+div.nav-btn-container button {
+    background-color: white !important;
+    color: #1E293B !important;
+    border: 1px solid #E2E8F0 !important;
+    border-radius: 8px !important;
+    padding: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+    transition: all 0.2s ease !important;
+}
+
+div.nav-btn-container button:hover {
+    background-color: #F8FAFC !important;
+    border-color: #94A3B8 !important;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05) !important;
+}
+
